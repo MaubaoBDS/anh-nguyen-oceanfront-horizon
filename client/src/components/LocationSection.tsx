@@ -26,7 +26,8 @@ export default function LocationSection() {
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <img
               src={IMAGES.locationMap}
-              alt="Bản đồ vị trí Hà Sơn Tower"
+              alt="Bản đồ vị trí dự án Hà Sơn Tower tại Trạm Trôi, Hoài Đức, Hà Nội"
+              loading="lazy"
               className="w-full h-auto object-cover"
             />
             <div className="absolute top-4 left-4 bg-navy/90 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center gap-2">

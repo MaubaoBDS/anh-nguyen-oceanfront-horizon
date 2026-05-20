@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={IMAGES.hero}
-          alt="Phối cảnh Hà Sơn Tower"
+          alt="Phối cảnh chung cư cao cấp Hà Sơn Tower 25 tầng tại Trạm Trôi Hoài Đức Hà Nội"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40" />

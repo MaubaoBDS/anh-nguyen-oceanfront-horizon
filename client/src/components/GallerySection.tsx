@@ -44,6 +44,7 @@ export default function GallerySection() {
               <img
                 src={item.src}
                 alt={item.alt}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300 flex items-center justify-center">

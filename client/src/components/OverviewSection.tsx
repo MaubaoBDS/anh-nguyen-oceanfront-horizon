@@ -36,7 +36,8 @@ export default function OverviewSection() {
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
                 src={IMAGES.building}
-                alt="Phối cảnh Hà Sơn Tower"
+                alt="Phối cảnh tổng thể chung cư Hà Sơn Tower 25 tầng tại Hoài Đức"
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">

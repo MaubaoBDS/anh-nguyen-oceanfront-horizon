@@ -168,7 +168,8 @@ export default function ContactSection() {
               <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
                 <img
                   src={CONTACT.avatar}
-                  alt={CONTACT.name}
+                  alt={`${CONTACT.name} - ${CONTACT.title} - Tư vấn dự án Hà Sơn Tower`}
+                  loading="lazy"
                   className="w-20 h-20 rounded-full object-cover object-top border-2 border-gold shadow-md"
                 />
                 <div>
