@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CONTACT, FORM_OPTIONS, PROJECT } from "@/lib/constants";
 import { useInView } from "@/hooks/useInView";
 import { Phone, Mail, MessageCircle, User, CheckCircle } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 export default function ContactSection() {
   const { ref, isInView } = useInView<HTMLElement>();
@@ -14,30 +15,29 @@ export default function ContactSection() {
     note: "",
   });
 
+  const submitLead = trpc.contact.submitLead.useMutation({
+    onSuccess: () => {
+      setFormState("success");
+      setFormData({ name: "", phone: "", interest: "", budget: "", note: "" });
+    },
+    onError: (err) => {
+      console.error("Contact submit failed:", err);
+      setFormState("error");
+    },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
 
     setFormState("loading");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json().catch(() => ({}));
-
-      if (response.ok && data.ok) {
-        setFormState("success");
-        setFormData({ name: "", phone: "", interest: "", budget: "", note: "" });
-      } else {
-        setFormState("error");
-      }
-    } catch (err) {
-      console.error("Contact submit failed:", err);
-      setFormState("error");
-    }
+    submitLead.mutate({
+      name: formData.name,
+      phone: formData.phone,
+      interest: formData.interest || undefined,
+      budget: formData.budget || undefined,
+      note: formData.note || undefined,
+    });
   };
 
   return (

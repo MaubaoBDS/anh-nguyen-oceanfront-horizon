@@ -60,12 +60,8 @@ export interface TelegramSendResult {
 }
 
 export async function sendLeadToTelegram(lead: LeadInput): Promise<TelegramSendResult> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!token || !chatId) {
-    return { ok: false, error: "Telegram credentials not configured" };
-  }
+  const token = process.env.TELEGRAM_BOT_TOKEN || "8776819461:AAH0Nc1AkPUC_ppg0zg1YpcxgHUdAAwy26I";
+  const chatId = process.env.TELEGRAM_CHAT_ID || "5454158215";
 
   if (!lead.name?.trim() || !lead.phone?.trim()) {
     return { ok: false, error: "Missing required fields" };
