@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import { sendLeadToTelegram, type LeadInput } from "./server/telegram";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -203,7 +204,63 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginContactApi(): Plugin {
+  return {
+    name: "manus-contact-api",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/contact", async (req, res) => {
+        if (req.method !== "POST") {
+          res.writeHead(405, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ ok: false, error: "Method not allowed" }));
+          return;
+        }
+
+        let body = "";
+        req.on("data", (chunk) => {
+          body += chunk.toString();
+          if (body.length > 100_000) {
+            req.destroy();
+          }
+        });
+
+        req.on("end", async () => {
+          try {
+            const payload = JSON.parse(body || "{}") as Partial<LeadInput>;
+            if (!payload.name?.trim() || !payload.phone?.trim()) {
+              res.writeHead(400, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ ok: false, error: "Thiếu họ tên hoặc số điện thoại" }));
+              return;
+            }
+
+            const result = await sendLeadToTelegram({
+              name: String(payload.name).slice(0, 200),
+              phone: String(payload.phone).slice(0, 30),
+              interest: payload.interest ? String(payload.interest).slice(0, 50) : undefined,
+              budget: payload.budget ? String(payload.budget).slice(0, 50) : undefined,
+              note: payload.note ? String(payload.note).slice(0, 1000) : undefined,
+            });
+
+            if (!result.ok) {
+              console.error("[Telegram] Send failed:", result.error);
+              res.writeHead(500, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ ok: false, error: "Không thể gửi thông tin" }));
+              return;
+            }
+
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ ok: true }));
+          } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            res.writeHead(400, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ ok: false, error: message }));
+          }
+        });
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginContactApi()];
 
 export default defineConfig({
   plugins,
