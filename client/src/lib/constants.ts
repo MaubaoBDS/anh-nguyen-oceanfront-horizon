@@ -33,7 +33,7 @@ export const PROJECT = {
   style: "Hiện đại",
   apartmentArea: "65 – 98 m²",
   bedrooms: "2 – 3 phòng ngủ",
-  pricePerM2: "Chỉ từ 6x triệu/m²",
+  pricePerM2: "Giá liên hệ thỏa thuận",
   totalUnits: "~300 căn hộ",
   floors: "25 tầng nổi + 2 tầng hầm",
   commercial: "3 tầng thương mại dịch vụ",
@@ -44,7 +44,7 @@ export const PROJECT = {
 
 export const SEO = {
   title: "Hà Sơn Tower - Căn Hộ Cao Cấp Trạm Trôi, Hoài Đức",
-  description: "Hà Sơn Tower - Chung cư cao cấp 25 tầng tại Trạm Trôi, Hoài Đức. Sổ hồng vĩnh viễn, giá từ 6x triệu/m², căn hộ 2-3PN diện tích 65-98m². Liên hệ 0933.235.444",
+  description: "Hà Sơn Tower - Chung cư cao cấp 25 tầng tại Trạm Trôi, Hoài Đức. Sổ hồng vĩnh viễn, căn hộ 2-3PN diện tích 65-98m². Liên hệ 0933.235.444",
 } as const;
 
 export const HIGHLIGHTS = [

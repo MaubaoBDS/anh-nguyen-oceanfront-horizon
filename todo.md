@@ -7,3 +7,4 @@
 - [x] Chuyển contact form sang tRPC procedure (contact.submitLead)
 - [x] Vitest tests cho contact.submitLead
 - [x] Database schema (users table) pushed
+- [x] Thay đổi giá từ '6x triệu/m²' sang 'Giá liên hệ thỏa thuận'

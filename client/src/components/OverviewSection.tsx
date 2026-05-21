@@ -62,7 +62,7 @@ export default function OverviewSection() {
                   ["Quy mô", PROJECT.floors],
                   ["Tổng diện tích", PROJECT.totalArea],
                   ["Loại căn hộ", `${PROJECT.bedrooms}, diện tích ${PROJECT.apartmentArea}`],
-                  ["Giá bán", PROJECT.pricePerM2 + " (đã gồm VAT + nội thất)"],
+                  ["Giá bán", PROJECT.pricePerM2],
                   ["Pháp lý", PROJECT.legal],
                 ].map(([label, value]) => (
                   <div key={label} className="grid grid-cols-5 gap-4 px-6 py-3.5">

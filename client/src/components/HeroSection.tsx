@@ -51,8 +51,8 @@ export default function HeroSection() {
               <p className="text-white/60 text-xs sm:text-sm mt-1">m² / căn</p>
             </div>
             <div className="text-center">
-              <p className="text-gold font-serif text-2xl sm:text-3xl font-bold">6x</p>
-              <p className="text-white/60 text-xs sm:text-sm mt-1">triệu/m²</p>
+              <p className="text-gold font-serif text-xl sm:text-2xl font-bold">Giá Thỏa Thuận</p>
+              <p className="text-white/60 text-xs sm:text-sm mt-1">Liên hệ</p>
             </div>
           </div>
 
