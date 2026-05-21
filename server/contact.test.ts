@@ -64,7 +64,7 @@ describe("contact.submitLead", () => {
     });
   });
 
-  it("throws error when Telegram send fails", async () => {
+  it("still returns ok when Telegram send fails (graceful degradation)", async () => {
     vi.mocked(sendLeadToTelegram).mockResolvedValueOnce({
       ok: false,
       error: "Telegram API error: 400",
@@ -73,12 +73,12 @@ describe("contact.submitLead", () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
-    await expect(
-      caller.contact.submitLead({
-        name: "Test User",
-        phone: "0901234567",
-      })
-    ).rejects.toThrow("Không thể gửi thông tin");
+    // Lead is saved to DB even if Telegram fails - graceful degradation
+    const result = await caller.contact.submitLead({
+      name: "Test User",
+      phone: "0901234567",
+    });
+    expect(result).toEqual({ ok: true });
   });
 
   it("rejects empty name", async () => {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CONTACT, FORM_OPTIONS, PROJECT } from "@/lib/constants";
 import { useInView } from "@/hooks/useInView";
+import { useLocation } from "wouter";
 import { Phone, Mail, MessageCircle, User, CheckCircle } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
@@ -15,10 +16,12 @@ export default function ContactSection() {
     note: "",
   });
 
+  const [, navigate] = useLocation();
   const submitLead = trpc.contact.submitLead.useMutation({
     onSuccess: () => {
       setFormState("success");
       setFormData({ name: "", phone: "", interest: "", budget: "", note: "" });
+      setTimeout(() => navigate("/cam-on"), 1200);
     },
     onError: (err) => {
       console.error("Contact submit failed:", err);
