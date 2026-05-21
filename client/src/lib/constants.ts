@@ -19,6 +19,8 @@ export const IMAGES = {
   garden: "https://d2xsxph8kpxj0f.cloudfront.net/310519663541088664/Q52BQ62R4zTHBhYrx7v7o3/garden-amenity-8G5htWPETEncNDJCnWVWC8.webp",
   locationMap: "https://datxanhmb.vn/wp-content/uploads/2025/08/gelex-tower-tram-troi-vi-tri.jpg",
   building: "https://datxanhmb.vn/wp-content/uploads/2025/08/gelex-tower-tram-troi.jpg",
+  matBangTang1: "/manus-storage/mat-bang-tang-1_c14c2e3a.webp",
+  matBangTongThe: "/manus-storage/mat-bang-tong-the_b745a291.webp",
 } as const;
 
 export const PROJECT = {
@@ -98,6 +100,8 @@ export const GALLERY = [
   { src: IMAGES.lobby, alt: "Sảnh đón sang trọng Hà Sơn Tower" },
   { src: IMAGES.garden, alt: "Khu vườn và sân chơi trẻ em" },
   { src: IMAGES.locationMap, alt: "Bản đồ vị trí Hà Sơn Tower" },
+  { src: IMAGES.matBangTang1, alt: "Mặt bằng tầng 1 Hà Sơn Tower" },
+  { src: IMAGES.matBangTongThe, alt: "Mặt bằng tổng thể tầng 4,6,8,9,11,13,14,16,18,19,21 Hà Sơn Tower" },
 ] as const;
 
 export const NAV_ITEMS = [
