@@ -11,11 +11,11 @@
 
 ## Hệ thống không bỏ sót khách hàng
 
-- [ ] Cập nhật DB schema: thêm cột status, source, notes vào bảng leads
-- [ ] Server router: thêm procedure getLeads, updateLeadStatus cho admin CRM
-- [ ] Exit-intent Popup: hiện khi khách chuẩn bị thoát trang, thu thập số điện thoại
-- [ ] Trang cảm ơn (ThankYou page): hiện sau khi submit form thành công
-- [ ] Zalo Chat Widget: nút Zalo nổi cố định góc màn hình
-- [ ] CRM mini: trang /admin/leads cho chủ dự án xem và quản lý danh sách lead
-- [ ] Facebook Pixel: gắn tracking pixel vào index.html (cần FB Pixel ID)
-- [ ] Google Tag Manager: gắn GTM vào index.html (cần GTM ID)
+- [x] Cập nhật DB schema: thêm cột status, source, notes vào bảng leads
+- [x] Server router: thêm procedure getLeads, updateLeadStatus cho admin CRM
+- [x] Exit-intent Popup: hiện khi khách chuẩn bị thoát trang, thu thập số điện thoại
+- [x] Trang cảm ơn (ThankYou page): hiện sau khi submit form thành công
+- [x] Zalo Chat Widget: nút Zalo nổi cố định góc màn hình
+- [x] CRM mini: trang /admin/leads cho chủ dự án xem và quản lý danh sách lead
+- [x] Facebook Pixel: gắn tracking pixel vào index.html (ID: 1575633650039698)
+- [x] Google Tag Manager: placeholder GTM-XXXXXXX đã gắn vào index.html (cần GTM ID thật để kích hoạt)
