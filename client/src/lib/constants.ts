@@ -41,7 +41,7 @@ export const PROJECT = {
   commercial: "3 tầng thương mại dịch vụ",
   tagline: "Kiến Tạo Chuẩn Sống Mới Phía Tây Hà Nội",
   subTagline: "Căn hộ cao cấp tại trung tâm hành chính mới Hoài Đức",
-  status: "Đang mở bán",
+  status: "Sắp mở bán",
 } as const;
 
 export const SEO = {
