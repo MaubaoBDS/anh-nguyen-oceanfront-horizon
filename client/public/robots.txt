@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hasontowergelex.com/sitemap.xml
+
+# Cho phép tất cả bot tìm kiếm crawl toàn bộ trang
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Không cho phép crawl các file hệ thống
+Disallow: /__manus__/
