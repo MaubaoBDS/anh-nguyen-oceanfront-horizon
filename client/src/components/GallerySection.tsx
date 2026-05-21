@@ -45,6 +45,9 @@ export default function GallerySection() {
                 src={item.src}
                 alt={item.alt}
                 loading="lazy"
+                decoding="async"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-colors duration-300 flex items-center justify-center">
@@ -98,6 +101,9 @@ export default function GallerySection() {
             alt={GALLERY[lightbox].alt}
             className="max-w-full max-h-[85vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
+            decoding="async"
+            width={1200}
+            height={900}
           />
 
           <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm">

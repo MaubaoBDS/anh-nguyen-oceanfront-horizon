@@ -170,6 +170,9 @@ export default function ContactSection() {
                   src={CONTACT.avatar}
                   alt={`${CONTACT.name} - ${CONTACT.title} - Tư vấn dự án Hà Sơn Tower`}
                   loading="lazy"
+                  decoding="async"
+                  width={80}
+                  height={80}
                   className="w-20 h-20 rounded-full object-cover object-top border-2 border-gold shadow-md"
                 />
                 <div>

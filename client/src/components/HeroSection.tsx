@@ -15,6 +15,10 @@ export default function HeroSection() {
           src={IMAGES.hero}
           alt="Phối cảnh chung cư cao cấp Hà Sơn Tower 25 tầng tại Trạm Trôi Hoài Đức Hà Nội"
           className="w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/30" />

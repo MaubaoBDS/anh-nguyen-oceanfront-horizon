@@ -1,29 +1,55 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import OverviewSection from "@/components/OverviewSection";
-import LocationSection from "@/components/LocationSection";
-import AmenitiesSection from "@/components/AmenitiesSection";
-import PromotionsSection from "@/components/PromotionsSection";
-import GallerySection from "@/components/GallerySection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
+
+// Lazy load các section below-the-fold để giảm initial bundle size
+const OverviewSection = lazy(() => import("@/components/OverviewSection"));
+const LocationSection = lazy(() => import("@/components/LocationSection"));
+const AmenitiesSection = lazy(() => import("@/components/AmenitiesSection"));
+const PromotionsSection = lazy(() => import("@/components/PromotionsSection"));
+const GallerySection = lazy(() => import("@/components/GallerySection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const FloatingCTA = lazy(() => import("@/components/FloatingCTA"));
+
+// Skeleton placeholder nhẹ khi section đang load
+function SectionSkeleton() {
+  return <div className="py-20 lg:py-28 bg-ivory animate-pulse" style={{ minHeight: "200px" }} />;
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
+        {/* Hero load ngay - above the fold */}
         <HeroSection />
-        <OverviewSection />
-        <LocationSection />
-        <AmenitiesSection />
-        <PromotionsSection />
-        <GallerySection />
-        <ContactSection />
+        {/* Các section dưới fold - lazy load */}
+        <Suspense fallback={<SectionSkeleton />}>
+          <OverviewSection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <LocationSection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <AmenitiesSection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <PromotionsSection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <GallerySection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
-      <FloatingCTA />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+      <Suspense fallback={null}>
+        <FloatingCTA />
+      </Suspense>
       {/* Spacer for mobile floating CTA */}
       <div className="h-20 lg:hidden" />
     </div>

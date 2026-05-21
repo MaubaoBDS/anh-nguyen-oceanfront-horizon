@@ -35,6 +35,10 @@ export default function AmenitiesSection() {
             <img
               src={IMAGES.pool}
               alt="Bể bơi tầng thượng Hà Sơn Tower"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={600}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
@@ -47,6 +51,10 @@ export default function AmenitiesSection() {
             <img
               src={IMAGES.lobby}
               alt="Sảnh đón sang trọng Hà Sơn Tower"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={600}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
