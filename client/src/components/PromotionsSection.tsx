@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import { PROMOTIONS, CONTACT } from "@/lib/constants";
 import { useInView } from "@/hooks/useInView";
+import { fbViewContent, fbContact } from "@/lib/fbEvents";
 import { Gift, Percent, CreditCard, Phone } from "lucide-react";
 
 const promoIcons = [<Percent size={24} />, <CreditCard size={24} />, <Gift size={24} />];
 
 export default function PromotionsSection() {
   const { ref, isInView } = useInView<HTMLElement>();
+
+  useEffect(() => {
+    if (isInView) {
+      fbViewContent("Hà Sơn Tower - Ưu đãi & Chính sách giá");
+    }
+  }, [isInView]);
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -59,6 +67,7 @@ export default function PromotionsSection() {
             </button>
             <a
               href={`tel:${CONTACT.phone}`}
+              onClick={() => fbContact("phone")}
               className="px-8 py-3.5 rounded-md text-base font-semibold text-white border border-white/30 hover:border-gold hover:text-gold transition-colors duration-200 flex items-center gap-2"
             >
               <Phone size={18} />

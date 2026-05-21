@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CONTACT, FORM_OPTIONS, PROJECT } from "@/lib/constants";
+import { fbLead, fbContact } from "@/lib/fbEvents";
 import { useInView } from "@/hooks/useInView";
 import { useLocation } from "wouter";
 import { Phone, Mail, MessageCircle, User, CheckCircle } from "lucide-react";
@@ -20,6 +21,7 @@ export default function ContactSection() {
   const submitLead = trpc.contact.submitLead.useMutation({
     onSuccess: () => {
       setFormState("success");
+      fbLead({ content_name: "Hà Sơn Tower - Form liên hệ chính" });
       setFormData({ name: "", phone: "", interest: "", budget: "", note: "" });
       setTimeout(() => navigate("/cam-on"), 1200);
     },
@@ -191,6 +193,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <a
                   href={`tel:${CONTACT.phone}`}
+                  onClick={() => fbContact("phone")}
                   className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 hover:bg-gold/20 transition-colors group"
                 >
                   <Phone size={18} className="text-gold" />
@@ -204,6 +207,7 @@ export default function ContactSection() {
                   href={CONTACT.zalo}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => fbContact("zalo")}
                   className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 hover:bg-gold/20 transition-colors group"
                 >
                   <MessageCircle size={18} className="text-gold" />
@@ -228,6 +232,7 @@ export default function ContactSection() {
               {/* Quick CTA */}
               <a
                 href={`tel:${CONTACT.phone}`}
+                onClick={() => fbContact("phone")}
                 className="btn-gold w-full mt-6 py-3.5 rounded-lg text-center text-base font-semibold flex items-center justify-center gap-2"
               >
                 <Phone size={18} />

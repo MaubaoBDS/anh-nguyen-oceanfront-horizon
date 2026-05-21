@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NAV_ITEMS, CONTACT, PROJECT } from "@/lib/constants";
+import { fbContact } from "@/lib/fbEvents";
 import { Phone, Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -57,6 +58,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${CONTACT.phone}`}
+            onClick={() => fbContact("phone")}
             className="btn-gold px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2"
           >
             <Phone size={14} />

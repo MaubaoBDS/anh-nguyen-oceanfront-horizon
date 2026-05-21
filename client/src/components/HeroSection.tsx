@@ -1,4 +1,5 @@
 import { IMAGES, PROJECT, CONTACT } from "@/lib/constants";
+import { fbContact } from "@/lib/fbEvents";
 import { Phone, ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
@@ -64,6 +65,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-4">
             <a
               href={`tel:${CONTACT.phone}`}
+              onClick={() => fbContact("phone")}
               className="btn-gold px-6 py-3 rounded-md text-base font-semibold flex items-center gap-2"
             >
               <Phone size={18} />

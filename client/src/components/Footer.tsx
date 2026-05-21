@@ -1,4 +1,5 @@
 import { PROJECT, CONTACT, NAV_ITEMS } from "@/lib/constants";
+import { fbContact } from "@/lib/fbEvents";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -42,7 +43,7 @@ export default function Footer() {
           <div>
             <h4 className="text-gold font-semibold text-sm uppercase tracking-wider mb-4">Liên hệ tư vấn</h4>
             <div className="space-y-3">
-              <a href={`tel:${CONTACT.phone}`} className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
+              <a href={`tel:${CONTACT.phone}`} onClick={() => fbContact("phone")} className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
                 <Phone size={16} />
                 {CONTACT.phoneFormatted}
               </a>
@@ -50,7 +51,7 @@ export default function Footer() {
                 <Mail size={16} />
                 {CONTACT.email}
               </a>
-              <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
+              <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" onClick={() => fbContact("zalo")} className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
                 <MessageCircle size={16} />
                 Chat Zalo
               </a>

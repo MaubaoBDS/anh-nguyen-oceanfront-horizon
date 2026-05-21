@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { X, Gift, Phone } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { CONTACT } from "@/lib/constants";
+import { fbLead, fbContact } from "@/lib/fbEvents";
 
 export default function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,10 @@ export default function ExitIntentPopup() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const submitLead = trpc.contact.submitLead.useMutation({
-    onSuccess: () => setSubmitted(true),
+    onSuccess: () => {
+      setSubmitted(true);
+      fbLead({ content_name: "Hà Sơn Tower - Exit-intent Popup" });
+    },
     onError: () => setError("Có lỗi xảy ra, vui lòng thử lại."),
   });
 
@@ -139,7 +143,7 @@ export default function ExitIntentPopup() {
 
               <p className="text-center text-white/40 text-xs mt-3">
                 Hoặc gọi ngay{" "}
-                <a href={`tel:${CONTACT.phone}`} className="text-gold underline">
+                <a href={`tel:${CONTACT.phone}`} onClick={() => fbContact("phone")} className="text-gold underline">
                   {CONTACT.phoneFormatted}
                 </a>
               </p>

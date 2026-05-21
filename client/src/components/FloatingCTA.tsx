@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CONTACT } from "@/lib/constants";
+import { fbLead, fbContact } from "@/lib/fbEvents";
 import { Phone, MessageCircle, X, Send } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
@@ -10,7 +11,10 @@ export default function FloatingCTA() {
   const [submitted, setSubmitted] = useState(false);
 
   const submitLead = trpc.contact.submitLead.useMutation({
-    onSuccess: () => setSubmitted(true),
+    onSuccess: () => {
+      setSubmitted(true);
+      fbLead({ content_name: "Hà Sơn Tower - Floating CTA Quick Form" });
+    },
   });
 
   const handleQuickSubmit = (e: React.FormEvent) => {
@@ -88,6 +92,7 @@ export default function FloatingCTA() {
             href={CONTACT.zalo}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => fbContact("zalo")}
             className="w-14 h-14 rounded-full bg-[#0068ff] hover:bg-[#0057d9] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
             aria-label="Chat Zalo"
           >
@@ -118,6 +123,7 @@ export default function FloatingCTA() {
           </span>
           <a
             href={`tel:${CONTACT.phone}`}
+            onClick={() => fbContact("phone")}
             className="w-14 h-14 rounded-full bg-gold hover:bg-amber-500 text-navy flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 relative"
             aria-label="Gọi ngay"
           >

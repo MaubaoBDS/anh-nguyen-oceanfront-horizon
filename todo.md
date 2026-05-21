@@ -19,3 +19,9 @@
 - [x] CRM mini: trang /admin/leads cho chủ dự án xem và quản lý danh sách lead
 - [x] Facebook Pixel: gắn tracking pixel vào index.html (ID: 1575633650039698)
 - [x] Google Tag Manager: placeholder GTM-XXXXXXX đã gắn vào index.html (cần GTM ID thật để kích hoạt)
+
+## Facebook Custom Events
+
+- [x] Sự kiện Lead: kích hoạt khi khách submit form liên hệ thành công
+- [x] Sự kiện Contact: kích hoạt khi khách nhấn nút Gọi ngay hoặc Zalo
+- [x] Sự kiện ViewContent: kích hoạt khi khách cuộn đến section Ưu đãi
