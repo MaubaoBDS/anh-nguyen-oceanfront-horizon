@@ -8,7 +8,7 @@ export const CONTACT = {
   phoneFormatted: "0933.235.444",
   email: "maubao19982@gmail.com",
   zalo: "https://zalo.me/0933235444",
-  avatar: "/manus-storage/pasted_file_HfoMUk_image_165560af.webp",
+  avatar: "/manus-storage/profile-avatar_32317a8e.webp",
   experience: "10+ năm kinh nghiệm tư vấn BĐS",
 } as const;
 
