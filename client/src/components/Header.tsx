@@ -34,7 +34,7 @@ export default function Header() {
         {/* Logo / Project Name */}
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded bg-gold flex items-center justify-center">
-            <span className="text-navy font-serif font-bold text-sm">HS</span>
+            <span className="text-navy font-serif font-bold text-sm">OFH</span>
           </div>
           <span className="font-serif font-semibold text-white text-lg hidden sm:block">
             {PROJECT.name}

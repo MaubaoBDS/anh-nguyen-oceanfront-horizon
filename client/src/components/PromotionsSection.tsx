@@ -11,7 +11,7 @@ export default function PromotionsSection() {
 
   useEffect(() => {
     if (isInView) {
-      fbViewContent("Hà Sơn Tower - Ưu đãi & Chính sách giá");
+      fbViewContent("AnhNguyen OceanFront Horizon - Ưu đãi & Chính sách");
     }
   }, [isInView]);
 

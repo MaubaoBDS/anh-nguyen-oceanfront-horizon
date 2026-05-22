@@ -40,7 +40,7 @@ function formatLead(lead: LeadInput): string {
   const now = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
 
   return [
-    "🏢 <b>LEAD MỚI - HÀ SƠN TOWER</b>",
+    "🌊 <b>LEAD MỚI - OCEANFRONT HORIZON NHA TRANG</b>",
     "",
     `👤 <b>Họ tên:</b> ${escapeHtml(lead.name)}`,
     `📞 <b>SĐT:</b> ${escapeHtml(lead.phone)}`,

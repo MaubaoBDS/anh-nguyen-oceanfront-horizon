@@ -25,3 +25,26 @@
 - [x] Sự kiện Lead: kích hoạt khi khách submit form liên hệ thành công
 - [x] Sự kiện Contact: kích hoạt khi khách nhấn nút Gọi ngay hoặc Zalo
 - [x] Sự kiện ViewContent: kích hoạt khi khách cuộn đến section Ưu đãi
+
+## OceanFront Horizon Landing Page
+
+- [x] Clone từ nền tảng Hà Sơn Tower
+- [x] Upload 15 ảnh dự án lên CDN (manus-storage)
+- [x] constants.ts: thông tin dự án OceanFront Horizon đầy đủ
+- [x] HeroSection: ảnh hero, tagline, stats (415 căn, 38–72m², Sổ Hồng)
+- [x] OverviewSection: thông tin dự án, bảng thông số, highlights
+- [x] LocationSection: vị trí Trần Phú Nha Trang, kết nối tiện ích
+- [x] AmenitiesSection: Sky Galaxy Pool, Infinity Cascade, Vertical Forest
+- [x] PromotionsSection: chính sách thanh toán, vay ngân hàng, nội thất
+- [x] VR360Section: iframe nhúng https://tav.vn/oceanfront/
+- [x] GallerySection: 14 ảnh thực tế dự án
+- [x] ContactSection: form lead (tên, SĐT, nội dung, ngân sách)
+- [x] Header: logo OFH, navigation, hotline
+- [x] Footer: thông tin liên hệ MSH Group
+- [x] FloatingCTA: nút Zalo + Gọi ngay cố định góc màn hình
+- [x] ExitIntentPopup: popup khi khách chuẩn bị thoát
+- [x] Telegram Bot: gửi lead đến Chat ID 5454158215 (đã test OK)
+- [x] Facebook Custom Events: Lead, Contact, ViewContent
+- [x] SEO meta tags: title, description, OG tags cho OceanFront Horizon
+- [ ] Thêm Facebook Pixel ID thật cho OFH (khi có)
+- [ ] Gắn domain riêng cho OFH (khi có)

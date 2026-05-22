@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded bg-gold flex items-center justify-center">
-                <span className="text-navy font-serif font-bold text-base">HS</span>
+                <span className="text-navy font-serif font-bold text-base">OFH</span>
               </div>
               <span className="font-serif font-bold text-xl text-white">{PROJECT.name}</span>
             </div>

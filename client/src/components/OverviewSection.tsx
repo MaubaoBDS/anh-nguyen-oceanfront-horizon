@@ -1,14 +1,15 @@
 import { PROJECT, HIGHLIGHTS, IMAGES } from "@/lib/constants";
 import { useInView } from "@/hooks/useInView";
-import { MapPin, FileCheck, Route, Building2, Trees, TrendingUp } from "lucide-react";
+import { Waves, FileCheck, Mountain, Building2, Trees, TrendingUp, Sun } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
-  "map-pin": <MapPin size={24} />,
+  "waves": <Waves size={24} />,
   "file-check": <FileCheck size={24} />,
-  "route": <Route size={24} />,
+  "mountain": <Mountain size={24} />,
   "building-2": <Building2 size={24} />,
   "trees": <Trees size={24} />,
   "trending-up": <TrendingUp size={24} />,
+  "sun": <Sun size={24} />,
 };
 
 export default function OverviewSection() {
@@ -25,7 +26,7 @@ export default function OverviewSection() {
           </h2>
           <div className="gold-divider mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-base lg:text-lg">
-            Chung cư cao cấp 25 tầng tại trung tâm hành chính mới Hoài Đức, kiến tạo chuẩn sống hiện đại phía Tây Hà Nội
+            Căn hộ nghỉ dưỡng sở hữu lâu dài mặt tiền vịnh Nha Trang – nơi thiên nhiên, kiến trúc và cuộc sống hòa quyện thành một tuyệt tác
           </p>
         </div>
 
@@ -35,8 +36,8 @@ export default function OverviewSection() {
           <div className="lg:col-span-2">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
-                src={IMAGES.building}
-                alt="Phối cảnh tổng thể chung cư Hà Sơn Tower 25 tầng tại Hoài Đức"
+                src={IMAGES.overviewDay}
+                alt="Toàn cảnh dự án AnhNguyen OceanFront Horizon mặt tiền vịnh Nha Trang ban ngày"
                 loading="lazy"
                 decoding="async"
                 width={800}
@@ -44,7 +45,7 @@ export default function OverviewSection() {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-                <p className="text-gold font-serif text-lg font-semibold">Sổ hồng vĩnh viễn</p>
+                <p className="text-gold font-serif text-lg font-semibold">Sở hữu lâu dài – Sổ hồng vĩnh viễn</p>
                 <p className="text-white/80 text-sm">Pháp lý minh bạch, an tâm đầu tư</p>
               </div>
             </div>
@@ -60,12 +61,15 @@ export default function OverviewSection() {
                 {[
                   ["Tên dự án", PROJECT.name],
                   ["Chủ đầu tư", PROJECT.developer],
-                  ["Đơn vị thi công", PROJECT.contractor],
+                  ["Đơn vị vận hành", PROJECT.operator],
+                  ["Tổng đại lý", PROJECT.distributor],
                   ["Vị trí", PROJECT.location],
                   ["Quy mô", PROJECT.floors],
                   ["Tổng diện tích", PROJECT.totalArea],
-                  ["Loại căn hộ", `${PROJECT.bedrooms}, diện tích ${PROJECT.apartmentArea}`],
-                  ["Giá bán", PROJECT.pricePerM2],
+                  ["Tổng số căn", PROJECT.totalUnits],
+                  ["Loại sản phẩm", PROJECT.productTypes],
+                  ["Diện tích căn", PROJECT.apartmentArea],
+                  ["Bàn giao", PROJECT.handover],
                   ["Pháp lý", PROJECT.legal],
                 ].map(([label, value]) => (
                   <div key={label} className="grid grid-cols-5 gap-4 px-6 py-3.5">
@@ -87,7 +91,7 @@ export default function OverviewSection() {
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               <div className="w-12 h-12 rounded-lg bg-navy/5 group-hover:bg-gold/10 flex items-center justify-center text-navy group-hover:text-gold transition-colors duration-300 mb-4">
-                {iconMap[item.icon]}
+                {iconMap[item.icon] ?? <Building2 size={24} />}
               </div>
               <h4 className="font-semibold text-navy text-base mb-2">{item.title}</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
