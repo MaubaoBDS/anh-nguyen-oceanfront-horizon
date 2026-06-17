@@ -121,7 +121,7 @@ export const NAV_ITEMS = [
   { label: "Vị trí", href: "#location" },
   { label: "Tiện ích", href: "#amenities" },
   { label: "Ưu đãi", href: "#promotions" },
-  { label: "Bảng tính", href: "#investment-calculator" },
+  { label: "Tính dòng tiền cho thuê", href: "#investment-calculator" },
   { label: "VR360", href: "#vr360" },
   { label: "Hình ảnh", href: "#gallery" },
   { label: "Liên hệ", href: "#contact" },
