@@ -47,7 +47,7 @@ export default function InvestmentCalculatorSection() {
             </div>
           )}
           <iframe
-            src="/calculator.html"
+            src="https://horizoncalc-dxyksgqb.manus.space"
             title="Bảng Tính Dòng Tiền Cho Thuê – AnhNguyen OceanFront Horizon"
             className="w-full block"
             style={{
