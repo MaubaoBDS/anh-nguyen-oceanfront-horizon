@@ -6,7 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ThankYou from "./pages/ThankYou";
-import AdminLeads from "./pages/AdminLeads";
+import AdminLeads from "@/pages/AdminLeads";
+import CalculatorPage from "@/pages/CalculatorPage";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/cam-on"} component={ThankYou} />
       <Route path={"/admin/leads"} component={AdminLeads} />
+      <Route path={"/calculator"} component={CalculatorPage} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
