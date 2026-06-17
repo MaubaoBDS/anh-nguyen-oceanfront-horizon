@@ -20,7 +20,9 @@ export default function InvestmentCalculatorSection() {
           </p>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-5">
             Tính Dòng Tiền{" "}
-            <span className="italic text-gold">Cho Thuê</span>
+            <em className="not-italic italic text-gold" style={{ fontStyle: "italic" }}>
+              Cho Thuê
+            </em>
           </h2>
           <p className="text-navy/60 max-w-xl mx-auto text-base lg:text-lg leading-relaxed">
             Ước tính dòng tiền cho thuê căn hộ AnhNguyen OceanFront Horizon dựa trên
@@ -28,21 +30,24 @@ export default function InvestmentCalculatorSection() {
           </p>
         </div>
 
-        {/* Calculator Embed */}
-        <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden" style={{ boxShadow: "0 4px 32px rgba(0,0,0,0.08)" }}>
-          {/* Loading overlay - shown on top of iframe until it loads */}
+        {/* Calculator Embed – same-origin iframe, loads instantly */}
+        <div
+          className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden"
+          style={{ boxShadow: "0 4px 32px rgba(0,0,0,0.08)" }}
+        >
           {!loaded && (
-            <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10">
+            <div
+              className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10"
+              style={{ minHeight: "700px" }}
+            >
               <div className="w-16 h-16 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center mb-4">
                 <Loader2 size={28} className="text-gold animate-spin" />
               </div>
               <p className="text-navy/50 text-sm">Đang tải bảng tính...</p>
             </div>
           )}
-
-          {/* Iframe always rendered and visible to allow loading */}
           <iframe
-            src="https://horizoncalc-dxyksgqb.manus.space"
+            src="/calculator.html"
             title="Bảng Tính Dòng Tiền Cho Thuê – AnhNguyen OceanFront Horizon"
             className="w-full block"
             style={{
@@ -51,7 +56,6 @@ export default function InvestmentCalculatorSection() {
               border: "none",
             }}
             allowFullScreen
-            loading="lazy"
             onLoad={() => setLoaded(true)}
           />
         </div>
