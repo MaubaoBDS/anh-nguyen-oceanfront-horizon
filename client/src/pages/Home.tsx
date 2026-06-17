@@ -40,13 +40,13 @@ export default function Home() {
           <PromotionsSection />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
-          <InvestmentCalculatorSection />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
           <VR360Section />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <GallerySection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <InvestmentCalculatorSection />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <ContactSection />
