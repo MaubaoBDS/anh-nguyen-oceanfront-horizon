@@ -8,19 +8,7 @@
       "destination": "/api/index.ts"
     },
     {
-      "source": "/calculator.html",
-      "destination": "/calculator.html"
-    },
-    {
-      "source": "/calc.js",
-      "destination": "/calc.js"
-    },
-    {
-      "source": "/calc.css",
-      "destination": "/calc.css"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
