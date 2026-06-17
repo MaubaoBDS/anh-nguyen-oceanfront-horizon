@@ -30,9 +30,9 @@ export default function InvestmentCalculatorSection() {
           </p>
         </div>
 
-        {/* Calculator Embed – same-origin iframe, loads instantly */}
+        {/* Calculator Embed – local file, no admin section, horizontal layout */}
         <div
-          className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden"
+          className="relative w-full max-w-6xl mx-auto rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 4px 32px rgba(0,0,0,0.08)" }}
         >
           {!loaded && (
@@ -47,11 +47,11 @@ export default function InvestmentCalculatorSection() {
             </div>
           )}
           <iframe
-            src="https://horizoncalc-dxyksgqb.manus.space"
+            src="/calculator.html"
             title="Bảng Tính Dòng Tiền Cho Thuê – AnhNguyen OceanFront Horizon"
             className="w-full block"
             style={{
-              height: "900px",
+              height: "820px",
               minHeight: "700px",
               border: "none",
             }}
