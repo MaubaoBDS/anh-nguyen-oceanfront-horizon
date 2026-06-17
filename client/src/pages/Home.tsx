@@ -7,6 +7,7 @@ const OverviewSection = lazy(() => import("@/components/OverviewSection"));
 const LocationSection = lazy(() => import("@/components/LocationSection"));
 const AmenitiesSection = lazy(() => import("@/components/AmenitiesSection"));
 const PromotionsSection = lazy(() => import("@/components/PromotionsSection"));
+const InvestmentCalculatorSection = lazy(() => import("@/components/InvestmentCalculatorSection"));
 const VR360Section = lazy(() => import("@/components/VR360Section"));
 const GallerySection = lazy(() => import("@/components/GallerySection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
@@ -37,6 +38,9 @@ export default function Home() {
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <PromotionsSection />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <InvestmentCalculatorSection />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <VR360Section />
