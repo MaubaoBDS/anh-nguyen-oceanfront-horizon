@@ -62,7 +62,7 @@ export default function Header() {
             className="btn-gold px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2"
           >
             <Phone size={14} />
-            <span className="hidden sm:inline">{CONTACT.phoneFormatted}</span>
+            <span className="hidden sm:inline">{CONTACT.phoneLabel}</span>
             <span className="sm:hidden">Gọi ngay</span>
           </a>
 

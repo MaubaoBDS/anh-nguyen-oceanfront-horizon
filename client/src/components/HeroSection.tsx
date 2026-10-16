@@ -52,12 +52,12 @@ export default function HeroSection() {
               <p className="text-white/60 text-xs sm:text-sm mt-1">Căn hộ</p>
             </div>
             <div className="text-center border-x border-white/20">
-              <p className="text-gold font-serif text-2xl sm:text-3xl font-bold">38–72</p>
+              <p className="text-gold font-serif text-2xl sm:text-3xl font-bold">38–69,7</p>
               <p className="text-white/60 text-xs sm:text-sm mt-1">m² / căn</p>
             </div>
             <div className="text-center">
-              <p className="text-gold font-serif text-xl sm:text-2xl font-bold">Sổ Hồng</p>
-              <p className="text-white/60 text-xs sm:text-sm mt-1">Vĩnh viễn</p>
+              <p className="text-gold font-serif text-xl sm:text-2xl font-bold">Sở hữu</p>
+              <p className="text-white/60 text-xs sm:text-sm mt-1">Lâu dài</p>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ export default function HeroSection() {
               className="btn-gold px-6 py-3 rounded-md text-base font-semibold flex items-center gap-2"
             >
               <Phone size={18} />
-              Gọi ngay {CONTACT.phoneFormatted}
+              Gọi ngay {CONTACT.phoneLabel}
             </a>
             <button
               onClick={scrollToContact}

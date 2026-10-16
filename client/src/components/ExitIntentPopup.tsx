@@ -97,7 +97,7 @@ export default function ExitIntentPopup() {
                   Khoan đã! Nhận ưu đãi độc quyền
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  Để lại số điện thoại — nhận ngay <span className="text-gold font-semibold">bảng giá chi tiết</span> và <span className="text-gold font-semibold">chính sách ưu đãi mới nhất</span> từ Hà Sơn Tower.
+                  Để lại số điện thoại — nhận ngay <span className="text-gold font-semibold">bảng giá chi tiết</span> và <span className="text-gold font-semibold">chính sách ưu đãi mới nhất</span> từ AnhNguyen OceanFront Horizon.
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ export default function ExitIntentPopup() {
               <p className="text-center text-white/40 text-xs mt-3">
                 Hoặc gọi ngay{" "}
                 <a href={`tel:${CONTACT.phone}`} onClick={() => fbContact("phone")} className="text-gold underline">
-                  {CONTACT.phoneFormatted}
+                  {CONTACT.phoneLabel}
                 </a>
               </p>
             </>
@@ -162,7 +162,7 @@ export default function ExitIntentPopup() {
                 className="inline-flex items-center gap-2 btn-gold px-6 py-3 rounded-lg font-semibold text-sm"
               >
                 <Phone size={16} />
-                Gọi ngay {CONTACT.phoneFormatted}
+                Gọi ngay {CONTACT.phoneLabel}
               </a>
             </div>
           )}

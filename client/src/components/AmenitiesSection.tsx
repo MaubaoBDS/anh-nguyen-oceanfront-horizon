@@ -19,13 +19,13 @@ export default function AmenitiesSection() {
       <div className={`container section-fade-in ${isInView ? "visible" : ""}`}>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-gold font-medium text-sm uppercase tracking-widest mb-3">Tiện ích kỷ lục</p>
+          <p className="text-gold font-medium text-sm uppercase tracking-widest mb-3">Tiện ích nổi bật</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">
             Thiên Đường Nghỉ Dưỡng Giữa Lòng Nha Trang
           </h2>
           <div className="gold-divider mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-base lg:text-lg">
-            Hệ thống tiện ích đẳng cấp resort 5 sao – Sky Galaxy Pool 102m dài nhất Việt Nam, Infinity Cascade, Vertical Forest độc bản
+            Hệ thống tiện ích đẳng cấp resort 5 sao – Sky Galaxy Pool hồ bơi vô cực 102m, Infinity Cascade, Vertical Forest
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function AmenitiesSection() {
           <div className="relative rounded-lg overflow-hidden shadow-xl group h-64 md:h-80">
             <img
               src={IMAGES.galaxyPool}
-              alt="Sky Galaxy Pool 102m dài nhất Việt Nam về đêm tại OceanFront Horizon"
+              alt="Sky Galaxy Pool hồ bơi vô cực 102m về đêm tại OceanFront Horizon"
               loading="lazy"
               decoding="async"
               width={800}
@@ -44,13 +44,13 @@ export default function AmenitiesSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="text-gold font-serif text-xl font-semibold">Sky Galaxy Pool 102m</p>
-              <p className="text-white/80 text-sm">Dài nhất Việt Nam – view trọn vịnh biển</p>
+              <p className="text-white/80 text-sm">Hồ bơi vô cực trên tầng cao – view trọn vịnh biển</p>
             </div>
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl group h-64 md:h-80">
             <img
               src={IMAGES.waterfall}
-              alt="Thác nước tràn Infinity Cascade cao nhất Nha Trang tại OceanFront Horizon"
+              alt="Thác nước tràn Infinity Cascade tại OceanFront Horizon"
               loading="lazy"
               decoding="async"
               width={800}
@@ -60,7 +60,7 @@ export default function AmenitiesSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="text-gold font-serif text-xl font-semibold">Infinity Cascade</p>
-              <p className="text-white/80 text-sm">Thác nước tràn cao nhất Nha Trang</p>
+              <p className="text-white/80 text-sm">Thác nước tràn</p>
             </div>
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl group h-64 md:h-80">
@@ -76,7 +76,7 @@ export default function AmenitiesSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="text-gold font-serif text-xl font-semibold">Vertical Forest</p>
-              <p className="text-white/80 text-sm">Rừng sinh thái thẳng đứng độc đáo nhất Nha Trang</p>
+              <p className="text-white/80 text-sm">Rừng sinh thái thẳng đứng</p>
             </div>
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl group h-64 md:h-80">

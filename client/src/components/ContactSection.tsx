@@ -75,7 +75,7 @@ export default function ContactSection() {
                   className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-md text-base font-semibold"
                 >
                   <Phone size={18} />
-                  Gọi {CONTACT.phoneFormatted}
+                  Gọi {CONTACT.phoneLabel}
                 </a>
               </div>
             ) : (
@@ -159,7 +159,7 @@ export default function ContactSection() {
 
                 {formState === "error" && (
                   <p className="text-red-500 text-sm text-center">
-                    Có lỗi xảy ra. Vui lòng gọi hotline {CONTACT.phoneFormatted} để được hỗ trợ.
+                    Có lỗi xảy ra. Vui lòng gọi hotline {CONTACT.phoneLabel} để được hỗ trợ.
                   </p>
                 )}
               </form>
@@ -173,7 +173,7 @@ export default function ContactSection() {
               <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
                 <img
                   src={CONTACT.avatar}
-                  alt={`${CONTACT.name} - ${CONTACT.title} - Tư vấn dự án Hà Sơn Tower`}
+                  alt={`${CONTACT.name} - ${CONTACT.title} - Tư vấn dự án AnhNguyen OceanFront Horizon`}
                   loading="lazy"
                   decoding="async"
                   width={80}
@@ -183,11 +183,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-serif text-lg font-semibold text-white">{CONTACT.name}</h4>
                   <p className="text-gold text-sm">{CONTACT.title}</p>
-                  <p className="text-white/60 text-xs mt-0.5">{CONTACT.company}</p>
                 </div>
               </div>
-
-              <p className="text-white/70 text-sm mb-6">{CONTACT.experience}</p>
 
               {/* Contact Methods */}
               <div className="space-y-4">
@@ -198,7 +195,7 @@ export default function ContactSection() {
                 >
                   <Phone size={18} className="text-gold" />
                   <div>
-                    <p className="text-white text-sm font-medium group-hover:text-gold transition-colors">{CONTACT.phoneFormatted}</p>
+                    <p className="text-white text-sm font-medium group-hover:text-gold transition-colors">{CONTACT.phoneLabel}</p>
                     <p className="text-white/50 text-xs">Gọi trực tiếp</p>
                   </div>
                 </a>

@@ -119,7 +119,7 @@ export default function FloatingCTA() {
         {/* Phone */}
         <div className="flex items-center gap-2 group">
           <span className="bg-navy text-white text-xs px-2.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-lg whitespace-nowrap border border-white/10">
-            {CONTACT.phoneFormatted}
+            {CONTACT.phoneLabel}
           </span>
           <a
             href={`tel:${CONTACT.phone}`}

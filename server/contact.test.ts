@@ -7,6 +7,13 @@ vi.mock("./telegram", () => ({
   sendLeadToTelegram: vi.fn().mockResolvedValue({ ok: true }),
 }));
 
+// Mock the database module (no DB in test environment)
+vi.mock("./db", () => ({
+  insertLead: vi.fn().mockResolvedValue(undefined),
+  getAllLeads: vi.fn().mockResolvedValue([]),
+  updateLeadStatus: vi.fn().mockResolvedValue(undefined),
+}));
+
 import { sendLeadToTelegram } from "./telegram";
 
 function createPublicContext(): TrpcContext {

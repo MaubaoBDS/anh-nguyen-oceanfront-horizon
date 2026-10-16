@@ -55,6 +55,10 @@ export default function PromotionsSection() {
           ))}
         </div>
 
+        <p className="text-white/70 text-sm text-center max-w-2xl mx-auto mb-12">
+          Dự án đang thi công móng. Ở giai đoạn này khách ký Thỏa thuận ký quỹ, chưa ký hợp đồng mua bán.
+        </p>
+
         {/* CTA */}
         <div className="text-center">
           <p className="text-white/60 text-sm mb-5">Liên hệ ngay để nhận bảng giá chi tiết và chính sách mới nhất</p>
@@ -71,7 +75,7 @@ export default function PromotionsSection() {
               className="px-8 py-3.5 rounded-md text-base font-semibold text-white border border-white/30 hover:border-gold hover:text-gold transition-colors duration-200 flex items-center gap-2"
             >
               <Phone size={18} />
-              {CONTACT.phoneFormatted}
+              {CONTACT.phoneLabel}
             </a>
           </div>
         </div>

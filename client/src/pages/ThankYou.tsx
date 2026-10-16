@@ -73,7 +73,7 @@ export default function ThankYou() {
             className="btn-gold px-8 py-3.5 rounded-lg font-semibold flex items-center justify-center gap-2"
           >
             <Phone size={18} />
-            Gọi ngay {CONTACT.phoneFormatted}
+            Gọi ngay {CONTACT.phoneLabel}
           </a>
           <Link
             href="/"

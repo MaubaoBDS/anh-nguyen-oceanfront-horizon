@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a href={`tel:${CONTACT.phone}`} onClick={() => fbContact("phone")} className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
                 <Phone size={16} />
-                {CONTACT.phoneFormatted}
+                {CONTACT.phoneLabel}
               </a>
               <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-white/60 hover:text-gold text-sm transition-colors">
                 <Mail size={16} />
@@ -60,7 +60,6 @@ export default function Footer() {
               <p className="text-white/40 text-xs">
                 {CONTACT.name} - {CONTACT.title}
               </p>
-              <p className="text-white/40 text-xs">{CONTACT.company}</p>
             </div>
           </div>
         </div>

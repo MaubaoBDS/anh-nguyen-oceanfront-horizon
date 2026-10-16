@@ -45,7 +45,7 @@ export default function OverviewSection() {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-                <p className="text-gold font-serif text-lg font-semibold">Sở hữu lâu dài – Sổ hồng vĩnh viễn</p>
+                <p className="text-gold font-serif text-lg font-semibold">Sở hữu lâu dài</p>
                 <p className="text-white/80 text-sm">Pháp lý minh bạch, an tâm đầu tư</p>
               </div>
             </div>
@@ -61,8 +61,6 @@ export default function OverviewSection() {
                 {[
                   ["Tên dự án", PROJECT.name],
                   ["Chủ đầu tư", PROJECT.developer],
-                  ["Đơn vị vận hành", PROJECT.operator],
-                  ["Tổng đại lý", PROJECT.distributor],
                   ["Vị trí", PROJECT.location],
                   ["Quy mô", PROJECT.floors],
                   ["Tổng diện tích", PROJECT.totalArea],
